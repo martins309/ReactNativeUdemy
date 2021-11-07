@@ -7,28 +7,37 @@ const SquareScreen = () => {
   const [green, setGreen] = useState(0);
   const [blue, setBlue] = useState(0);
 
-
   const setColor = (color, change) => {
-     //color === 'red', 'green', 'blue'
+    //color === 'red', 'green', 'blue'
     //change is going to be +- 15
 
-    if (color === 'red'){
-      if(red + change > 255 || red + change < 0){
+    switch (color) {
+      case "red":
+        red + change > 255 || red + change < 0 ? null : setRed(red + change);
         return;
-    } else {
-      setRed(red + change);
-    }
-  }
-}
-   
 
-    
-  
-  // WHEN YOU WANT TO CREATE TRUE CONSTANT VALUE THAT IS A 
-  //CONFIGURATION OPTION AND NOT AS A PROP ALL CAPS 
+      case "blue":
+        blue + change > 255 || blue + change < 0
+          ? null
+          : setBlue(blue + change);
+        return;
+
+      case "green":
+        green + change > 255 || green + change < 0
+          ? null
+          : setGreen(green + change);
+        return;
+
+      default:
+        return;
+    }
+  };
+
+  // WHEN YOU WANT TO CREATE TRUE CONSTANT VALUE THAT IS A
+  //CONFIGURATION OPTION AND NOT AS A PROP ALL CAPS
   //FOR THE VARIABLE
 
-  const COLOR_INCREMENT = 15;  
+  const COLOR_INCREMENT = 15;
 
   console.log(red);
 
@@ -39,19 +48,19 @@ const SquareScreen = () => {
   return (
     <View>
       <ColorCounter
-        onIncrease={() => setColor('red', COLOR_INCREMENT)}
-        onDecrease={() => setColor('red', -1 * COLOR_INCREMENT)}
+        onIncrease={() => setColor("red", COLOR_INCREMENT)}
+        onDecrease={() => setColor("red", -1 * COLOR_INCREMENT)}
         color="Red"
       />
       <ColorCounter
-        onIncrease={() => setBlue(blue + COLOR_INCREMENT)}
-        onDecrease={() => setBlue(blue - COLOR_INCREMENT)}
+        onIncrease={() => setColor("blue", +COLOR_INCREMENT)}
+        onDecrease={() => setColor("blue", -1 * COLOR_INCREMENT)}
         color="Blue"
       />
 
       <ColorCounter
-        onIncrease={() => setGreen(green + COLOR_INCREMENT)}
-        onDecrease={() => setGreen(green - COLOR_INCREMENT)}
+        onIncrease={() => setColor("green", +COLOR_INCREMENT)}
+        onDecrease={() => setColor("green", -1 * COLOR_INCREMENT)}
         color="Green"
       />
       <View
