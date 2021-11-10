@@ -10,7 +10,7 @@ const reducer = (state, action) => {
 
 const CounterScreen = () => {
   const [state, dispatch] = useReducer(reducer, {
-    counter : 0
+    counter: 0,
   });
 
   const COUNTER_INCREMENT = 5;
