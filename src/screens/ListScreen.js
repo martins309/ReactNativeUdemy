@@ -19,6 +19,22 @@ const ListScreen = () => {
   ];
   return (
     <FlatList
+      keyExtractor={friend => friend.name}
+      data={friends}
+      renderItem={({ item }) => {
+        return (
+          <Text style={styles.textStyle}>
+           { item.name} -            
+             { item.age}
+          </Text>
+        );
+      }}
+    />
+  );
+};
+
+{
+  /* <FlatList
       keyExtractor={(friend) => friend.name}
       data={friends}
       renderItem={({ item }) => {
@@ -28,9 +44,8 @@ const ListScreen = () => {
           </Text>
         );
       }}
-    />
-  );
-};
+    /> */
+}
 
 const styles = StyleSheet.create({
   textStyle: {
