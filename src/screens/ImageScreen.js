@@ -8,6 +8,7 @@ const ImageScreen = () => {
             <ImageDetail title="Forest" />
             <ImageDetail title="bloodClot"/>
             <ImageDetail title="beefpatty"/>
+            <ImageDetail title="beefpatty"/>
         </View>
     )
 }

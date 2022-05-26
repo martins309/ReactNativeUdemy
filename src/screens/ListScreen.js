@@ -11,13 +11,14 @@ const ListScreen = () => {
     ]
     return (
      <View>
-         <Text>This is the Flatlist</Text>
          <FlatList 
-         keyExtractor={friend => friend.name}
+         keyExtractor={(friend) => friend.name}
          data={friends}
          renderItem={({ item }) => {
              return (
-              <Text>{item.name} - {item.age}</Text>
+                 <Text>
+                     {item.name}- {item.age}
+                 </Text>
              )
          }}
          />
@@ -25,5 +26,9 @@ const ListScreen = () => {
         
     )
 }
+
+const styles = StyleSheet.create({})
+
+
 
 export default ListScreen
