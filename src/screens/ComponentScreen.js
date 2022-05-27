@@ -7,7 +7,7 @@ const ComponentScreen = () => {
     return (
         <View>
             <Text style={styles.textStyle}>this is so much fun {greeting}</Text>
-            <Text style={styles.subTextStyle}>I {name} am going to be so good at this</Text>
+            <Text style={styles.subTextStyle}>I {name} is going to be so good at this</Text>
         </View>
     )
 }
