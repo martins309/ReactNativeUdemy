@@ -1,20 +1,25 @@
-import React from 'react'
-import { Text, StyleSheet, View } from 'react-native'
-import ImageDetail from './Components/ImageDetail'
+import React from "react";
+import { Text, StyleSheet, View } from "react-native";
+import ImageDetail from "./Components/ImageDetail";
 
 const ImageScreen = () => {
-    return (
-        <View>
-            <ImageDetail title="Forest" />
-            <ImageDetail title="bloodClot"/>
-            <ImageDetail title="beefpatty"/>
-            <ImageDetail title="beefpatty"/>
-        </View>
-    )
-}
+  return (
+    <View>
+      <ImageDetail
+        title="Forest"
+        imageSource={require("../images/forest.jpg")}
+      />
 
-const styles = StyleSheet.create({
+      <ImageDetail title="beach" imageSource={require("../images/beach.jpg")} />
 
-})
+      <ImageDetail
+        title="mountain"
+        imageSource={require("../images/mountain.jpg")}
+      />
+    </View>
+  );
+};
 
-export default ImageScreen
+const styles = StyleSheet.create({});
+
+export default ImageScreen;
